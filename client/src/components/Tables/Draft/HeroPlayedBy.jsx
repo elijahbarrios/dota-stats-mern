@@ -21,7 +21,9 @@ const HeroPlayedBy = ({playedBy}) => {
                         <Container>
                             <Row>
                                 <Col md="auto">
-                                    <Badge>{player[1].length}</Badge> 
+                                    <h3>
+                                        <Badge pill bg="success">{player[1].length}</Badge>
+                                    </h3> 
                                 </Col>
                                 <Col md="auto">
                                     <PlayerInfo
