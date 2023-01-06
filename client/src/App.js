@@ -22,12 +22,12 @@ function App() {
             <Route path="quals/eeu" exact element={<Page leagueID="14856" />} />
             <Route path="quals/cn" exact element={<Page leagueID="14861" />} />
             <Route path="quals/sea" exact element={<Page leagueID="14854" />} />
-            <Route path="div1/na" exact element={<Page leagueID="" />} />
-            <Route path="div1/sa" exact element={<Page leagueID="" />} />
-            <Route path="div1/weu" exact element={<Page leagueID="" />} />
-            <Route path="div1/eeu" exact element={<Page leagueID="" />} />
-            <Route path="div1/cn" exact element={<Page leagueID="" />} />
-            <Route path="div1/sea" exact element={<Page leagueID="" />} />
+            <Route path="div1/na" exact element={<Page leagueID="14893" />} />
+            <Route path="div1/sa" exact element={<Page leagueID="14886" />} />
+            <Route path="div1/weu" exact element={<Page leagueID="14892" />} />
+            <Route path="div1/eeu" exact element={<Page leagueID="14858" />} />
+            <Route path="div1/cn" exact element={<Page leagueID="14859" />} />
+            <Route path="div1/sea" exact element={<Page leagueID="14927" />} />
             <Route path="div2/na" exact element={<Page leagueID="" />} />
             <Route path="div2/sa" exact element={<Page leagueID="" />} />
             <Route path="div2/weu" exact element={<Page leagueID="" />} />
