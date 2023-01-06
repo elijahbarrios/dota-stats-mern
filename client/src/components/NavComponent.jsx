@@ -46,7 +46,7 @@ const NavComponent = () => {
                   <Nav.Link as={Link} to='div1/eeu' disabled>Eastern Europe</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/cn' disabled>China</Nav.Link>
+                  <Nav.Link as={Link} to='div1/cn'>China</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
                   <Nav.Link as={Link} to='div1/sea' disabled>Southeast Asia</Nav.Link>
