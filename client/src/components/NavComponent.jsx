@@ -34,22 +34,22 @@ const NavComponent = () => {
 
             <NavDropdown menuVariant="dark" title="Division I" id="basic-nav-dropdown">
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/na' disabled>North America</Nav.Link>
+                  <Nav.Link as={Link} to='div1/na'>North America</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/sa' disabled>South America</Nav.Link>
+                  <Nav.Link as={Link} to='div1/sa'>South America</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/weu' disabled>Western Europe</Nav.Link>
+                  <Nav.Link as={Link} to='div1/weu'>Western Europe</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/eeu' disabled>Eastern Europe</Nav.Link>
+                  <Nav.Link as={Link} to='div1/eeu'>Eastern Europe</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
                   <Nav.Link as={Link} to='div1/cn'>China</Nav.Link>
                </NavDropdown.Item>
                <NavDropdown.Item>
-                  <Nav.Link as={Link} to='div1/sea' disabled>Southeast Asia</Nav.Link>
+                  <Nav.Link as={Link} to='div1/sea'>Southeast Asia</Nav.Link>
                </NavDropdown.Item>
             </NavDropdown>
 
