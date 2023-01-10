@@ -190,7 +190,11 @@ const Page = ({leagueID}) => {
         [value]: (acc[value] || 0) + 1
       }), {})
       player.role = Object.entries(player.role).sort((a,b) => b[1] - a[1])
-      player.heroes = player.heroes.filter((x, i, a) => a.indexOf(x) === i)
+      player.heroes = player.heroes.reduce((acc, value) => ({
+	...acc,
+	[value]: (acc[value] || 0) + 1
+	}), {})
+      player.heroes = Object.entries(player.heroes).sort((a,b) => b[1] - a[1]))
     }
  
     setPlayerData(players)
