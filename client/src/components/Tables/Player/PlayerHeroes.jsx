@@ -8,7 +8,7 @@ const PlayerHeroes = ({heroes}) => {
           return (
             <>
              <Image key={key} src={"https://api.opendota.com"+HeroIcons[hero[0]].icon} />
-              <span class="position-relative top-0 start-100 translate-middle badge rounded-pill bg-info">{hero[1]}</span>
+              <span class="position-absolute translate-middle badge rounded-pill bg-info">{hero[1]}</span>
             </>
           )
        })}
