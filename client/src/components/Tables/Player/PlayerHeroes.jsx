@@ -7,9 +7,8 @@ const PlayerHeroes = ({heroes}) => {
        {heroes.map((hero, key) => {
           return (
             <>
-             <Image key={key} src={"https://api.opendota.com"+HeroIcons[hero[0]].icon}>
-              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info">{hero[1]}</span>
-             </Image>
+             <Image key={key} src={"https://api.opendota.com"+HeroIcons[hero[0]].icon} />
+              <span class="position-relative top-0 start-100 translate-middle badge rounded-pill bg-info">{hero[1]}</span>
             </>
           )
        })}
