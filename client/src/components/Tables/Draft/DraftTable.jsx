@@ -22,6 +22,12 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          compact: true
       },
       {
+         name: "Pick/Ban Count",
+         selector: hero => hero.pickCount + hero.banCount,
+         sortable: true,
+         compact: true
+      },
+      {
          name: "Pick Count",
          selector: hero => hero.pickCount,
          sortable: true,
