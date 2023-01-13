@@ -6,10 +6,10 @@ const TeamHeroPicks = ({picks}) => {
     <div>
        {picks.slice(0,5).map((pick, key) => {
           return (
-            <>
-              <Image key={key} src={"https://api.opendota.com"+HeroIcons[pick[0]].icon} />
-              {pick[1]}
-            </>
+            <div class="d-inline mx-2">
+             <Image class="mx-1" key={key} src={"https://api.opendota.com"+HeroIcons[pick[0]].icon} />
+              <span class="mx-1 position-absolute translate-middle badge rounded-pill bg-secondary">{pick[1]}</span>
+            </div>
           )
        })}
     </div>
