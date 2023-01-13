@@ -215,9 +215,9 @@ const Page = ({leagueID}) => {
                 data[index].role.push(player.role)
                 
                 if(match.radiant_win && match.players.slice(0,5).some(e => e.hero_id === pick.hero_id)) {
-                  data[index].wins === -1 ? data[index].wins = 1 : data[index].wins++
+                  data[index].wins == -1 ? data[index].wins = 1 : data[index].wins++
                 } else if(!match.radiant_win && match.players.slice(5).some(e => e.hero_id === pick.hero_id)) {
-                  data[index].wins === -1 ? data[index].wins = 1 : data[index].wins++
+                  data[index].wins == -1 ? data[index].wins = 1 : data[index].wins++
                 }
                 data[index].playedBy.push({
                   "playerName": player.name,
