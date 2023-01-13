@@ -28,6 +28,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
         sortable: true,
         compact: true,
         cell: player => <PlayerPosition role={player.role[0][0]} />,
+        sortFunction: positionSort
       },
       {
         name: 'Heroes Played',
@@ -92,6 +93,23 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
         compact: true
       }
     ]
+
+  const positionSort = (rowA, rowB) => {
+    const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
+    const a = positions.findIndex(e => e === rowA)
+    const b = positions.findIndex(e => e=== rowB)
+
+    if (a > b) {
+      return 1;
+    }
+
+    if (b > a) {
+        return -1;
+    }
+
+    return 0;
+
+  }
 
   return (
     <>
