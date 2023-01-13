@@ -278,7 +278,7 @@ const Page = ({leagueID}) => {
             <Col></Col>
             <Col md="auto">
             {loadingLeague &&
-              <Spinner animation="border" variant="primary" className="mt-5"/>
+              <Spinner animation="border" variant="primary" className="my-5"/>
             }
             {!loadingLeague && 
               <Stack direction="horizontal" gap={3} className="mx-auto mt-4">
