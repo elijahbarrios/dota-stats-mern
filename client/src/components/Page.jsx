@@ -243,15 +243,16 @@ const Page = ({leagueID}) => {
              }
        
              if(pick.is_pick) {
-                let player = match.players.find(e => e.hero_id === pick.hero_id)
-                pickObj.role.push(player.role)
-                let win = 0
-                if(match.radiant_win && match.players.slice(0,5).some(e => e.hero_id === pick.hero_id)) {
-                   win++
+               let player = match.players.find(e => e.hero_id === pick.hero_id)
+               pickObj.role.push(player.role)
+               let win = 0
+               if(match.radiant_win && match.players.slice(0,5).some(e => e.hero_id === pick.hero_id)) {
+                 win++
                 } else if(!match.radiant_win && match.players.slice(5).some(e => e.hero_id === pick.hero_id)) {
-                   win++
+                  win++
                 }
                 pickObj.wins = win
+                if(pick.heroId == 81) console.log(pickObj)
                 pickObj.playedBy.push({
                   "playerName": player.name,
                   "playerID": player.account_id,
