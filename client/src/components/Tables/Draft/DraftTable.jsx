@@ -40,6 +40,13 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          compact: true
       },
       {
+         name: "Contest Rate",
+         selector: hero => hero.contestRate,
+         sortable: true,
+         compact: true,
+         cell: hero => hero.contestRate + "%"
+      },
+      {
          name: "Positions played",
          selector: hero => hero.role,
          cell: hero => <HeroPosition roles={hero.role} />,

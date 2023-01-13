@@ -13,7 +13,6 @@ const Page = ({leagueID}) => {
 
   const [loadingLeague, setLoadingLeague] = useState(true)
   const [selectedStatGroup, setSelectedStatGroup] = useState('')
-  //const [leagueData, setLeagueData] = useState([])
   const [teamData, setTeamData] = useState([])
   const [playerData, setPlayerData] = useState([])
   const [draftData, setDraftData] = useState([])
@@ -22,7 +21,6 @@ const Page = ({leagueID}) => {
 
     setLoadingLeague(true)
     setSelectedStatGroup('')
-    //setLeagueData([])
     setTeamData([])
     setPlayerData([])
     setDraftData([])
@@ -33,7 +31,6 @@ const Page = ({leagueID}) => {
   const fetchLeagueData = async () => {
     const data = await fetch(`/api/league?leagueID=${leagueID}`)
     const dataJSON = await data.json()
-    //setLeagueData(dataJSON)
     calculateTeamData(dataJSON)
     calculatePlayerData(dataJSON)
     calculateDraftData(dataJSON)
@@ -231,6 +228,7 @@ const Page = ({leagueID}) => {
                   "match_id": match.match_id,
                 })
              } else data[index].banCount++
+             data[index].contestRate = (data[index].banCount + data[index].pickCount) / matches.length 
              data[index].order.push(pick.order)
           } else {
              let pickObj = {
@@ -238,6 +236,7 @@ const Page = ({leagueID}) => {
                 pickCount: Number(pick.is_pick),
                 banCount: Number(!pick.is_pick),
                 order: [pick.order],
+                contestRate: (Number(pick.is_pick) + Number(!pick.is_pick)) / matches.length,
                 wins: -1,
                 role: [],
                 playedBy: []
