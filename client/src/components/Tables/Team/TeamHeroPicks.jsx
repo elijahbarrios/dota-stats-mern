@@ -6,7 +6,10 @@ const TeamHeroPicks = ({picks}) => {
     <div>
        {picks.slice(0,5).map((pick, key) => {
           return (
-            <Image key={key} src={"https://api.opendota.com"+HeroIcons[pick[0]].icon} />
+            <>
+              <Image key={key} src={"https://api.opendota.com"+HeroIcons[pick[0]].icon} />
+              {pick[1]}
+            </>
           )
        })}
     </div>
