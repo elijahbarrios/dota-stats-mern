@@ -14,6 +14,12 @@ const TeamTable = ({selectedStatGroup, teamData}) => {
          grow: 2
       },
       {
+         name: "Games Played",
+         selector: team => team.gamesPlayed,
+         sortable: true,
+         compact: true,
+      },
+      {
          name: "Winrate",
          selector: team => team.winrate,
          sortable: true,

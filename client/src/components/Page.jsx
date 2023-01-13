@@ -71,6 +71,7 @@ const Page = ({leagueID}) => {
           teams.push({
             name: match.radiant_team_name,
             id: match.radiant_team_id,
+            gamesPlayed: 0,
             winrate: [victory],
             matchDuration: [match.duration],
             kills: [match.radiant_kills],
@@ -94,6 +95,7 @@ const Page = ({leagueID}) => {
           teams.push({
              name: match.dire_team_name,
              id: match.dire_team_id,
+             gamesPlayed: 0,
              winrate: [victory],
              matchDuration: [match.duration],
              kills: [match.dire_kills],
@@ -103,6 +105,7 @@ const Page = ({leagueID}) => {
     }
 
     for(const team of teams) {
+      team.gamesPlayed = team.winrate.length
       team.winrate = Math.round((team.winrate.reduce((a,b) => a+b) / team.winrate.length ) * 100)
 
       const matchDurationAvg = ((team.matchDuration).reduce((a,b) => a+b) / team.matchDuration.length / 60)
