@@ -8,6 +8,19 @@ import HeroPlayedBy from "./HeroPlayedBy"
 
 const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
 
+   winrateSort = (a, b) => {
+      if(!isFinite(a) && !isFinite(b) ) {
+         return 0;
+      }
+      if(!isFinite(a) ) {
+         return 1;
+      }
+      if(!isFinite(b) ) {
+         return -1;
+      }
+     return a-b;
+   }
+
    const draftColumns = [
       {
          name: "Hero",
@@ -19,6 +32,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "Winrate",
          selector: hero => hero.wins / hero.pickCount,
          sortable: true,
+         sortFunction: winrateSort,
          cell: hero => <HeroWinrate wins={hero.wins} numPicks={hero.pickCount} />,
          compact: true
       },
