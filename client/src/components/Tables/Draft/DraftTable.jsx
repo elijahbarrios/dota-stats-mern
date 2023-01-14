@@ -57,7 +57,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "Played by",
          selector: hero => hero.playedBy,
          cell: hero => <HeroPlayedBy playedBy={hero.playedBy} />,
-         grow: true
+         grow: 2
       }
    ]
 
