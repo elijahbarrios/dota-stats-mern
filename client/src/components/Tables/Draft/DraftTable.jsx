@@ -16,7 +16,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
       },
       {
          name: "Winrate",
-         selector: hero => hero.pickCount > 0 ? (hero.wins / hero.pickCount) : 0,
+         selector: hero => (hero.wins / hero.pickCount),
          sortable: true,
          cell: hero => <HeroWinrate wins={hero.wins} numPicks={hero.pickCount} />,
          compact: true
