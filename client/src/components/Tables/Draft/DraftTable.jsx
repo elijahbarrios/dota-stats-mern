@@ -8,7 +8,7 @@ import HeroPlayedBy from "./HeroPlayedBy"
 
 const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
 
-   winrateSort = (a, b) => {
+   const winrateSort = (a, b) => {
       if(!isFinite(a) && !isFinite(b) ) {
          return 0;
       }
