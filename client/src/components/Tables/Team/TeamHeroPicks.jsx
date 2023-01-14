@@ -1,6 +1,6 @@
 import Image from "react-bootstrap/Image"
 import HeroIcons from "dotaconstants/build/heroes.json"
-import "../../styles.css"
+import "../styles.css"
 
 const TeamHeroPicks = ({picks}) => {
   return (
