@@ -12,11 +12,12 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
       {
          name: "Hero",
          selector: hero => hero.heroId,
-         cell: hero => <HeroName heroId={hero.heroId} />
+         cell: hero => <HeroName heroId={hero.heroId} />,
+         compact: true
       },
       {
          name: "Winrate",
-         selector: hero => hero.pickCount,
+         selector: hero => hero.wins / hero.pickCount,
          sortable: true,
          cell: hero => <HeroWinrate wins={hero.wins} numPicks={hero.pickCount} />,
          compact: true
@@ -55,7 +56,8 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
       {
          name: "Played by",
          selector: hero => hero.playedBy,
-         cell: hero => <HeroPlayedBy playedBy={hero.playedBy} />
+         cell: hero => <HeroPlayedBy playedBy={hero.playedBy} />,
+         grow: true
       }
    ]
 
