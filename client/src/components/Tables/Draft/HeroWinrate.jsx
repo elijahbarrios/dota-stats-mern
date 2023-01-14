@@ -1,7 +1,7 @@
 const HeroWinrate = ({wins, numPicks}) => {
   return (
     <div>
-      {numPicks > -1 && Math.round((wins / numPicks ) * 100) + "%"}
+      {wins > -1 && Math.round((wins / numPicks ) * 100) + "%"}
     </div>
   )
 }
