@@ -1,7 +1,7 @@
 import Image from "react-bootstrap/Image"
 import { Stack } from "react-bootstrap"
 import HeroIcons from "dotaconstants/build/heroes.json"
-import "../styles.css"
+import "../../styles.css"
 
 const HeroName = ({heroId}) => {
   return (
