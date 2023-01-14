@@ -7,7 +7,7 @@ const HeroName = ({heroId}) => {
   return (
     <div>
       <Stack direction="horizontal" gap={2} >
-        <Image class="icon" src={"https://api.opendota.com"+HeroIcons[heroId].icon}/>
+        <Image className="icon" src={"https://api.opendota.com"+HeroIcons[heroId].icon}/>
         <p className="my-auto">{HeroIcons[heroId].localized_name}</p>
       </Stack>
     </div>
