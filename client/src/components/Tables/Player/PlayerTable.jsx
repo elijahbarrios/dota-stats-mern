@@ -12,8 +12,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
     const a = positions.findIndex(e => e === rowA.role)
     const b = positions.findIndex(e => e === rowB.role)
     
-    if (a < b) return 1
-    return -1
+    return a-b
   }
   
   const playerColumns = [
