@@ -6,6 +6,15 @@ import PlayerMatches from "./PlayerMatches"
 import DataTable from "react-data-table-component"
 
 const PlayerTable = ({selectedStatGroup, playerData }) => {
+
+  const positionSort = (rowA, rowB) => {
+    const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
+    const a = positions.findIndex(e => e === rowA.role)
+    const b = positions.findIndex(e => e === rowB.role)
+    
+    if (a < b) return 1
+    return -1
+  }
   
   const playerColumns = [
     {
@@ -27,6 +36,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       selector: player => player.role,
       sortable: true,
       compact: true,
+      sortFunction: positionSort,
       cell: player => <PlayerPosition role={player.role[0][0]} />,
     },
     {

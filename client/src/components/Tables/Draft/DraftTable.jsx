@@ -15,10 +15,10 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          return 0;
       }
       if(!isFinite(a) ) {
-         return 1;
+         return -1;
       }
       if(!isFinite(b) ) {
-         return -1;
+         return 1;
       }
      return a-b;
    }
@@ -28,7 +28,6 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "Hero",
          selector: hero => hero.heroId,
          cell: hero => <HeroName heroId={hero.heroId} />,
-         compact: true
       },
       {
          id: "winrate",
