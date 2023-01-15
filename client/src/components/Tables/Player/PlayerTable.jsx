@@ -12,7 +12,9 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
     const a = positions.findIndex(e => e === rowA.role)
     const b = positions.findIndex(e => e === rowB.role)
     
-    return a-b
+    if(a < b) return 1
+    if (b > a) return -1
+    return 0
   }
   
   const playerColumns = [
@@ -35,7 +37,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       selector: player => player.role,
       sortable: true,
       compact: true,
-      sortFunction: positionSort,
+      //sortFunction: positionSort,
       cell: player => <PlayerPosition role={player.role[0][0]} />,
     },
     {
@@ -72,26 +74,31 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
     {
       name: 'GPM Average',
       selector: player => player.gpm,
+      compact: true,
       sortable: true
     },
     {
       name: 'XPM Average',
       selector: player => player.xpm,
+      compact: true,
       sortable: true
     },
     {
       name: 'Hero Damage Average',
       selector: player => player.heroDamage,
+      compact: true,
       sortable: true
     },
     {
       name: 'Tower Damage Average',
       selector: player => player.towerDamage,
+      compact: true,
       sortable: true
     },
     {
       name: "Couriers Killed",
       selector: player => player.couriers,
+      compact: true,
       sortable: true
     },
     {
