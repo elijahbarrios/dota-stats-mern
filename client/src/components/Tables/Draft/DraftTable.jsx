@@ -8,7 +8,9 @@ import HeroPlayedBy from "./HeroPlayedBy"
 
 const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
 
-   const winrateSort = (a, b) => {
+   const winrateSort = (rowA, rowB) => {
+      const a = rowA.wins / rowA.pickCount
+      const b = rowB.wins / rowB.pickCount
       if(!isFinite(a) && !isFinite(b) ) {
          return 0;
       }
@@ -29,6 +31,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          compact: true
       },
       {
+         id: "winrate",
          name: "Winrate",
          selector: hero => hero.wins / hero.pickCount,
          sortable: true,
