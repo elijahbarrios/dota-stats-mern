@@ -254,12 +254,7 @@ const Page = ({leagueID}) => {
             wins: win,
             role: [],
             playedBy: [],
-            firstPhase: Math.round((pick.order.filter(e => {
-              if(e < 8) { 
-                 return true
-              }
-              return false
-           }).length / matches.length) * 100)
+            firstPhase: Math.round(((pick.order < 8) / matches.length) * 100)
           }
           
           if(pick.is_pick) {
