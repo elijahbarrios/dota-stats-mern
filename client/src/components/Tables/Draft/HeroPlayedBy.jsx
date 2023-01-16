@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 import PlayerInfo from "../Player/PlayerInfo"
-import Button from "react-bootstrap/Button"
+import Stack from "react-bootstrap/Stack"
 
 const HeroPlayedBy = ({playedBy}) => {
 
@@ -19,7 +19,7 @@ const HeroPlayedBy = ({playedBy}) => {
             {Object.entries(players).map((player, key) => {
                 return (
                     <div>
-                        <Button variant="outline-primary" size="sm" disabled>
+                        <Stack direction="horizontal" gap={1}>
                             <PlayerInfo
                                 player_id={player[0]}
                                 name={player[1][0].playerName}
@@ -30,7 +30,7 @@ const HeroPlayedBy = ({playedBy}) => {
                                 key={key}
                             />
                             <Badge bg="secondary">{player[1].length}</Badge>
-                        </Button>
+                        </Stack>
                     </div>
                 )
             })
