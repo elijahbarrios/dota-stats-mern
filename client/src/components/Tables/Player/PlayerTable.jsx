@@ -9,8 +9,8 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
 
   const positionSort = (rowA, rowB) => {
     const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
-    const a = positions.findIndex(e => e === rowA.role)
-    const b = positions.findIndex(e => e === rowB.role)
+    const a = positions.indexOf(rowA.role)
+    const b = positions.indexOf(rowB.role)
     
     if(a < b) return 1
     if (b > a) return -1
@@ -37,7 +37,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       selector: player => player.role,
       sortable: true,
       compact: true,
-      //sortFunction: positionSort,
+      sortFunction: positionSort,
       cell: player => <PlayerPosition role={player.role[0][0]} />,
     },
     {
