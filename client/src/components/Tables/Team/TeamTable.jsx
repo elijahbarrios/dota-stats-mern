@@ -17,32 +17,27 @@ const TeamTable = ({selectedStatGroup, teamData}) => {
          name: "Games Played",
          selector: team => team.gamesPlayed,
          sortable: true,
-         center: true,
          compact: true,
       },
       {
          name: "Winrate",
          selector: team => team.winrate,
          sortable: true,
-         center: true,
          cell: team => team.winrate + "%"
       },
       {
          name: "Average Game Duration",
          selector: team => team.matchDuration,
-         center: true,
          sortable: true,
       },
       {
          name: "Average Kills Per Game",
          selector: team => team.kills,
-         center: true,
          sortable: true
       },
       {  
          name: "# Unique Picks",
          selector: team => team.numPicks,
-         center: true,
          sortable: true
       },
       {  

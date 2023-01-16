@@ -12,7 +12,7 @@ const PlayerMatches = ({matches}) => {
             {matches.map((match,key) => {
                return (
                   <Dropdown.Item key={key}>
-                     <a href={`https://www.stratz.com/matches/${match}`} target="_blank" rel="noopener noreferrer">{match}</a>
+                     <a href={`https://www.opendota.com/matches/${match}`} target="_blank" rel="noopener noreferrer">{match}</a>
                   </Dropdown.Item>
                )
             })}
