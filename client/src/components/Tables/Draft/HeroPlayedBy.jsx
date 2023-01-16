@@ -19,7 +19,7 @@ const HeroPlayedBy = ({playedBy}) => {
             {Object.entries(players).map((player, key) => {
                 return (
                     <div>
-                        <Button variant="outline-primary">
+                        <Button variant="outline-primary" size="sm" disabled>
                             <PlayerInfo
                                 player_id={player[0]}
                                 name={player[1][0].playerName}
