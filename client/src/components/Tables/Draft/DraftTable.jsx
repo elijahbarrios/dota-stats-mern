@@ -33,6 +33,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          id: "winrate",
          name: "Winrate",
          selector: hero => hero.wins / hero.pickCount,
+         center: true,
          sortable: true,
          sortFunction: winrateSort,
          cell: hero => <HeroWinrate wins={hero.wins} numPicks={hero.pickCount} />,
@@ -41,12 +42,14 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
       {
          name: "Pick/Ban Count",
          selector: hero => hero.pickCount + hero.banCount,
+         center: true,
          sortable: true,
          compact: true
       },
       {
          name: "Pick Count",
          selector: hero => hero.pickCount,
+         center: true,
          sortable: true,
          compact: true
       },
@@ -54,12 +57,14 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "Ban Count",
          selector: hero => hero.banCount,
          sortable: true,
+         center: true,
          compact: true
       },
       {
          name: "Contest Rate",
          selector: hero => hero.contestRate,
          sortable: true,
+         center: true,
          compact: true,
          cell: hero => hero.contestRate + "%"
       },
@@ -67,6 +72,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "First Phase Pick/Ban Rate",
          selector: hero => hero.firstPhase,
          sortable: true,
+         center: true,
          compact: true,
          cell: hero => hero.firstPhase + "%",
       },
@@ -74,6 +80,7 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          name: "Positions played",
          selector: hero => hero.role,
          cell: hero => <HeroPosition roles={hero.role} />,
+         center: true,
          compact: true
       },
       {

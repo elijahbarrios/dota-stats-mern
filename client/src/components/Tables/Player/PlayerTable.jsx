@@ -24,13 +24,14 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       sortable: true,
       grow: 2,
       cell: player => <PlayerInfo
-      player_id={player.id}
-      name={player.name}
-      teamTag={player.team[1]}
-      teamName={player.team[0]}
-      teamID={player.team[2]}
-      placement={"right"}
+        player_id={player.id}
+        name={player.name}
+        teamTag={player.team[1]}
+        teamName={player.team[0]}
+        teamID={player.team[2]}
+        placement={"right"}
       />,
+      compact: true
     },
     {
       name: 'Position',
@@ -46,7 +47,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       cell: player => <PlayerHeroes heroes={player.heroes} />,
       sortable: true,
       compact: true,
-      grow: 2
+      grow: 3
     },
     {
       name: 'Kill Average',

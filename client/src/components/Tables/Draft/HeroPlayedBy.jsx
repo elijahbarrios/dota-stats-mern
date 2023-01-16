@@ -20,6 +20,7 @@ const HeroPlayedBy = ({playedBy}) => {
                 return (
                     <div>
                         <Stack direction="horizontal" gap={1}>
+                            <Badge bg="secondary">{player[1].length}</Badge>
                             <PlayerInfo
                                 player_id={player[0]}
                                 name={player[1][0].playerName}
@@ -29,7 +30,6 @@ const HeroPlayedBy = ({playedBy}) => {
                                 placement={"left"}
                                 key={key}
                             />
-                            <Badge bg="secondary">{player[1].length}</Badge>
                         </Stack>
                     </div>
                 )
