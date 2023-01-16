@@ -37,7 +37,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       selector: player => player.role,
       sortable: true,
       compact: true,
-      sortFunction: positionSort,
+      //sortFunction: positionSort,
       cell: player => <PlayerPosition role={player.role[0][0]} />,
     },
     {
