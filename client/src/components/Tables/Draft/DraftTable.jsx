@@ -64,16 +64,17 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          cell: hero => hero.contestRate + "%"
       },
       {
+         name: "First Phase Pick/Ban Rate",
+         selector: hero => hero.firstPhase,
+         sortable: true,
+         compact: true,
+         cell: hero => hero.firstPhase + "%",
+      },
+      {
          name: "Positions played",
          selector: hero => hero.role,
          cell: hero => <HeroPosition roles={hero.role} />,
          compact: true
-      },
-      {
-         name: "First Phase Pick/Ban Rate",
-         selector: hero => hero.firstPhase,
-         compact: true,
-         cell: hero => hero.firstPhase + "%",
       },
       {
          name: "Played by",
