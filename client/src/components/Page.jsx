@@ -230,6 +230,12 @@ const Page = ({leagueID}) => {
           } else data[index].banCount++
           data[index].contestRate = Math.round(((data[index].banCount + data[index].pickCount) / matches.length) * 100)
           data[index].order.push(pick.order)
+          data[index].firstPhase = Math.round((data[index].order.filter(e => {
+            if(e < 8) { 
+               return true
+            }
+            return false
+         }).length / matches.length) * 100)
         } else {
 
           let win = -1
@@ -247,7 +253,13 @@ const Page = ({leagueID}) => {
             contestRate: Math.round(((Number(pick.is_pick) + Number(!pick.is_pick)) / matches.length) * 100),
             wins: win,
             role: [],
-            playedBy: []
+            playedBy: [],
+            firstPhase: Math.round((pick.order.filter(e => {
+              if(e < 8) { 
+                 return true
+              }
+              return false
+           }).length / matches.length) * 100)
           }
           
           if(pick.is_pick) {
