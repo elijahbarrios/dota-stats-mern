@@ -73,6 +73,8 @@ const NavComponent = () => {
                   <Nav.Link as={Link} to='div2/sea' disabled>Southeast Asia</Nav.Link>
                </NavDropdown.Item>
             </NavDropdown>
+
+            <Nav.Link className="justify-content-end" as={Link} to="/about">About</Nav.Link>
          </Nav>
       </Navbar.Collapse>
    </Navbar>

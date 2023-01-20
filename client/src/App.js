@@ -1,7 +1,6 @@
 import NavComponent from './components/NavComponent'
 import Home from './components/Home'
 import Page from './components/Page'
-import Footer from './components/Footer'
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -36,7 +35,6 @@ function App() {
             <Route path="div2/cn" exact element={<Page leagueID="" />} />
             <Route path="div2/sea" exact element={<Page leagueID="" />} />
           </Routes>
-          <Footer />
         </div>
       </div>
     </Router>
