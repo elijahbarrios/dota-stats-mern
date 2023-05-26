@@ -32,9 +32,6 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
         placement={"right"}
       />,
       compact: true,
-      expandableRows: true,
-      expandableRowsComponent: {PlayerMatches},
-      expandOnRowClicked: true,
     },
     {
       name: 'Position',
@@ -111,11 +108,15 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
     <>
     {selectedStatGroup === 'Player' && 
     <DataTable
-    noDataComponent=""
-    highlightOnHover
-    columns={playerColumns}
-    data={playerData}
-    defaultSortFieldId={1}
+      noDataComponent=""
+      highlightOnHover
+      columns={playerColumns}
+      data={playerData}
+      defaultSortFieldId={1}
+      expandableRows
+      expandableRowsComponent={PlayerMatches}
+      expandOnRowClicked
+      expandableRowsHideExpander
     />
   }
   </>

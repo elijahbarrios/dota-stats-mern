@@ -145,7 +145,17 @@ const Page = ({leagueID}) => {
           players[index].couriers.push(player.courier_kills)
           players[index].heroes.push(player.hero_id)
           players[index].role.push(player.role)
-          players[index].matches.push(match.match_id)
+          players[index].matches.push(
+            {
+              match_id: match.match_id,
+              hero_played: player.hero_id,
+              team_played: slot > 5 ? 
+                [match.radiant_team_name, match.radiant_team_name_tag, match.radiant_team_id]
+                :
+                [match.dire_team_name, match.dire_team_name_tag, match.dire_team_id],
+              win: (slot < 5) && match.radiant_win
+            }
+          )
           
         } else {
           let teamArray = ["", ""]
@@ -169,7 +179,17 @@ const Page = ({leagueID}) => {
             couriers: [player.courier_kills],
             heroes: [player.hero_id],
             role: [player.role],
-            matches: [match.match_id]
+            matches: [
+              {
+                match_id: match.match_id,
+                hero_played: player.hero_id,
+                team_played: slot > 5 ? 
+                  [match.radiant_team_name, match.radiant_team_name_tag, match.radiant_team_id]
+                  :
+                  [match.dire_team_name, match.dire_team_name_tag, match.dire_team_id],
+                win: (slot < 5) & match.radiant_win
+              }
+            ]
           })
         }
       })
