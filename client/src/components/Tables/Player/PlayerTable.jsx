@@ -31,7 +31,10 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
         teamID={player.team[2]}
         placement={"right"}
       />,
-      compact: true
+      compact: true,
+      expandableRows: true,
+      expandableRowsComponent: {PlayerMatches},
+      expandOnRowClicked: true,
     },
     {
       name: 'Position',
@@ -102,12 +105,6 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       compact: true,
       sortable: true
     },
-    {
-      name: 'Matches Played',
-      selector: player => player.matches,
-      cell: player => <PlayerMatches matches={player.matches} />,
-      compact: true
-    }
   ]
   
   return (
