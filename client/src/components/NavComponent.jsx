@@ -19,19 +19,19 @@ const NavComponent = () => {
          <Col>
             <Row className="align-items-center">
                <Col>
-                  <Button variant="light" as={Link} to="div1/na">
+                  <Button variant="light" as={Link} to="/div1/na">
                      <Image fluid src={NorthAmerica} />
                      <p>North America</p>
                   </Button>
                </Col>
                <Col>
-                  <Button variant="light" as={Link} to="div1/weu">
+                  <Button variant="light" as={Link} to="/div1/weu">
                      <Image fluid src={WesternEurope} />
                      <p>Western Europe</p>
                   </Button>
                </Col>
                <Col>
-                  <Button variant="light" as={Link} to="div1/eeu">
+                  <Button variant="light" as={Link} to="/div1/eeu">
                      <Image height="114.967" width="120" src={EasternEurope} />
                      <p>Eastern Europe</p>
                   </Button>
@@ -39,19 +39,19 @@ const NavComponent = () => {
             </Row>
             <Row className="align-items-center">
                <Col>
-                  <Button variant="light" as={Link} to="div1/sa">
+                  <Button variant="light" as={Link} to="/div1/sa">
                      <Image fluid src={SouthAmerica} />
                      <p>South America</p>
                   </Button>
                </Col>
                <Col>
-                  <Button variant="light" as={Link} to="div1/cn">
+                  <Button variant="light" as={Link} to="/div1/cn">
                      <Image fluid src={China} />
                      <p>China</p>
                   </Button>
                </Col>
                <Col>
-                  <Button variant="light" as={Link} to="div1/sea">
+                  <Button variant="light" as={Link} to="/div1/sea">
                      <Image fluid src={SoutheastAsia} />
                      <p>Southeast Asia</p>
                   </Button>

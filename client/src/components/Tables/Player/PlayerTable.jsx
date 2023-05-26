@@ -7,15 +7,15 @@ import DataTable from "react-data-table-component"
 
 const PlayerTable = ({selectedStatGroup, playerData }) => {
 
-  const positionSort = (rowA, rowB) => {
-    const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
-    const a = positions.indexOf(rowA.role)
-    const b = positions.indexOf(rowB.role)
+  // const positionSort = (rowA, rowB) => {
+  //   const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
+  //   const a = positions.indexOf(rowA.role)
+  //   const b = positions.indexOf(rowB.role)
     
-    if(a > b) return 1
-    if (a < b) return -1
-    return 0
-  }
+  //   if(a > b) return 1
+  //   if (a < b) return -1
+  //   return 0
+  // }
   
   const playerColumns = [
     {
