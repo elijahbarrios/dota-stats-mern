@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button"
 import Spinner from 'react-bootstrap/Spinner'
 
 import Tables from './Tables'
+import NavComponent from './NavComponent'
 
 const Page = ({leagueID}) => {
 
@@ -298,6 +299,8 @@ const Page = ({leagueID}) => {
         playerData={playerData}
         draftData={draftData}
       />
+
+      <NavComponent />
 
     </div>
   )
