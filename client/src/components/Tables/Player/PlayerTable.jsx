@@ -6,6 +6,16 @@ import PlayerMatches from "./PlayerMatches"
 import DataTable from "react-data-table-component"
 
 const PlayerTable = ({selectedStatGroup, playerData }) => {
+
+  const positionSort = (rowA, rowB) => {
+    const positions = ["Carry", "Mid", "Offlane", "Soft Support", "Hard Support"]
+    const a = positions.indexOf(rowA.role)
+    const b = positions.indexOf(rowB.role)
+    
+    if(a > b) return 1
+    if (a < b) return -1
+    return 0
+  }
   
   const playerColumns = [
     {
@@ -14,19 +24,21 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       sortable: true,
       grow: 2,
       cell: player => <PlayerInfo
-      player_id={player.id}
-      name={player.name}
-      teamTag={player.team[1]}
-      teamName={player.team[0]}
-      teamID={player.team[2]}
-      placement={"right"}
+        player_id={player.id}
+        name={player.name}
+        teamTag={player.team[1]}
+        teamName={player.team[0]}
+        teamID={player.team[2]}
+        placement={"right"}
       />,
+      compact: true
     },
     {
       name: 'Position',
       selector: player => player.role,
       sortable: true,
       compact: true,
+      //sortFunction: positionSort,
       cell: player => <PlayerPosition role={player.role[0][0]} />,
     },
     {
@@ -35,7 +47,7 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
       cell: player => <PlayerHeroes heroes={player.heroes} />,
       sortable: true,
       compact: true,
-      grow: 2
+      grow: 3
     },
     {
       name: 'Kill Average',
@@ -63,26 +75,31 @@ const PlayerTable = ({selectedStatGroup, playerData }) => {
     {
       name: 'GPM Average',
       selector: player => player.gpm,
+      compact: true,
       sortable: true
     },
     {
       name: 'XPM Average',
       selector: player => player.xpm,
+      compact: true,
       sortable: true
     },
     {
       name: 'Hero Damage Average',
       selector: player => player.heroDamage,
+      compact: true,
       sortable: true
     },
     {
       name: 'Tower Damage Average',
       selector: player => player.towerDamage,
+      compact: true,
       sortable: true
     },
     {
       name: "Couriers Killed",
       selector: player => player.couriers,
+      compact: true,
       sortable: true
     },
     {

@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 
 import PlayerInfo from "../Player/PlayerInfo"
+import Stack from "react-bootstrap/Stack"
 
 const HeroPlayedBy = ({playedBy}) => {
 
@@ -18,24 +19,18 @@ const HeroPlayedBy = ({playedBy}) => {
             {Object.entries(players).map((player, key) => {
                 return (
                     <div>
-                        <Container>
-                            <Row>
-                                <Col md="auto">
-                                    <Badge pill bg="success">{player[1].length}</Badge>
-                                </Col>
-                                <Col md="auto">
-                                    <PlayerInfo
-                                        player_id={player[0]}
-                                        name={player[1][0].playerName}
-                                        teamTag={player[1][0].teamTag}
-                                        teamName={player[1][0].teamName}
-                                        teamID={player[1][0].teamID}
-                                        placement={"left"}
-                                        key={key}
-                                    />
-                                </Col>
-                            </Row>
-                        </Container>
+                        <Stack direction="horizontal" gap={1}>
+                            <Badge bg="secondary">{player[1].length}</Badge>
+                            <PlayerInfo
+                                player_id={player[0]}
+                                name={player[1][0].playerName}
+                                teamTag={player[1][0].teamTag}
+                                teamName={player[1][0].teamName}
+                                teamID={player[1][0].teamID}
+                                placement={"left"}
+                                key={key}
+                            />
+                        </Stack>
                     </div>
                 )
             })

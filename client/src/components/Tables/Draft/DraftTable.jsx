@@ -8,16 +8,33 @@ import HeroPlayedBy from "./HeroPlayedBy"
 
 const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
 
+   const winrateSort = (rowA, rowB) => {
+      const a = rowA.wins / rowA.pickCount
+      const b = rowB.wins / rowB.pickCount
+      if(!isFinite(a) && !isFinite(b) ) {
+         return 0;
+      }
+      if(!isFinite(a) ) {
+         return -1;
+      }
+      if(!isFinite(b) ) {
+         return 1;
+      }
+     return a-b;
+   }
+
    const draftColumns = [
       {
          name: "Hero",
          selector: hero => hero.heroId,
-         cell: hero => <HeroName heroId={hero.heroId} />
+         cell: hero => <HeroName heroId={hero.heroId} />,
       },
       {
+         id: "winrate",
          name: "Winrate",
-         selector: hero => (hero.wins / hero.pickCount),
+         selector: hero => hero.wins / hero.pickCount,
          sortable: true,
+         sortFunction: winrateSort,
          cell: hero => <HeroWinrate wins={hero.wins} numPicks={hero.pickCount} />,
          compact: true
       },
@@ -40,6 +57,20 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
          compact: true
       },
       {
+         name: "Contest Rate",
+         selector: hero => hero.contestRate,
+         sortable: true,
+         compact: true,
+         cell: hero => hero.contestRate + "%"
+      },
+      {
+         name: "First Phase Pick/Ban Rate",
+         selector: hero => hero.firstPhase,
+         sortable: true,
+         compact: true,
+         cell: hero => hero.firstPhase + "%",
+      },
+      {
          name: "Positions played",
          selector: hero => hero.role,
          cell: hero => <HeroPosition roles={hero.role} />,
@@ -48,7 +79,8 @@ const DraftTable = ({loadingDraft, selectedStatGroup, draftData}) => {
       {
          name: "Played by",
          selector: hero => hero.playedBy,
-         cell: hero => <HeroPlayedBy playedBy={hero.playedBy} />
+         cell: hero => <HeroPlayedBy playedBy={hero.playedBy} />,
+         grow: 2
       }
    ]
 
